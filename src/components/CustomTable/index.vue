@@ -24,15 +24,30 @@
       :width="item.width"
       show-overflow-tooltip
     >
-      <template v-if="item?.custom" #default="scope">
-        <slot :name="item.title" :scope="scope"></slot>
+      <template v-if="item.isBotton" v-slot="scope">
+        <div style="display: flex; justify-content: space-between">
+          <span style="padding-top: 7px">{{ scope.row[scope.column.property] }} </span>
+          <div class="inner-btn" @click="resetFn(scope.row)">重置</div>
+        </div>
+      </template>
+      <template v-else v-slot="scope">
+        <span v-if="item.formatter"
+          >{{
+            item.formatter(
+              scope.row,
+              scope.column,
+              scope.row[scope.column.property],
+              scope.$index
+            )
+          }}
+        </span>
+        <span v-else
+          >{{
+            scope.row[scope.column.property] ? scope.row[scope.column.property] : "- -"
+          }}
+        </span>
       </template>
     </el-table-column>
-    <template #empty>
-      <div class="empty" :style="{ height: tableHeight - 44 + 'px', ...cellStyle }">
-        暂无数据
-      </div>
-    </template>
     <slot name="actionColumn" />
   </el-table>
 </template>
@@ -81,7 +96,13 @@ let props = defineProps({
     default: false,
   },
 });
-let emit = defineEmits(["selectionChange", "delete", "selectChange", "selectAllChange"]);
+let emit = defineEmits([
+  "selectionChange",
+  "delete",
+  "selectChange",
+  "selectAllChange",
+  "resetFn",
+]);
 
 // 选中项发生改变
 const handleSelectionChange = (selection) => {
@@ -98,6 +119,10 @@ const handleSelectAllChange = (selection) => {
   emit("selectAllChange", selection);
 };
 
+// 表格内按钮
+const resetFn = (row) => {
+  emit("resetFn", row);
+};
 const refTable = ref();
 // 回显选中
 const handleEcho = (echoData) => {

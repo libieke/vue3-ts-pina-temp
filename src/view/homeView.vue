@@ -1,24 +1,26 @@
 <template>
   <div ref="rightTable" class="table">
-    <CustomTable
-      ref="tableList"
-      :table-data="tableData"
-      :selectShow="false"
-      :table-height="appManageHeight"
-      @selection-change="handleSelectionChange"
-    >
-      <template #角色="{ scope }">
-        <span>{{ scope.row.type == 0 ? "管理员" : "普通用户" }}</span>
-      </template>
-      <template v-slot:actionColumn>
-        <el-table-column label="操作" align="center" width="200">
-          <template v-slot="{ row }">
-            <span class="pointer mlr10" @click="handleEdit(row)">编辑</span>
-            <span class="pointer red mlr10" @click="handleDel(row)">删除</span>
+    <ContentTitle title="首页">
+      <div class="agent-container padding-top-20">
+        <CustomTable
+          ref="tableList"
+          :table-data="tableData"
+          :selectShow="false"
+          :table-height="appManageHeight"
+          @resetFn="handleReset"
+          @selection-change="handleSelectionChange"
+        >
+          <template v-slot:actionColumn>
+            <el-table-column label="操作" align="center" width="200">
+              <template v-slot="{ row }">
+                <span class="pointer mlr10" @click="handleEdit(row)">编辑</span>
+                <span class="pointer red mlr10" @click="handleDel(row)">删除</span>
+              </template>
+            </el-table-column>
           </template>
-        </el-table-column>
-      </template>
-    </CustomTable>
+        </CustomTable>
+      </div>
+    </ContentTitle>
   </div>
 </template>
 
@@ -60,11 +62,14 @@ const tableData = reactive({
     {
       title: "登录账号",
       prop: "username",
+      isBotton: true,
     },
     {
       title: "角色",
       prop: "type",
-      custom: true,
+      formatter: (row) => {
+        return row.type == 0 ? "管理员" : "普通用户";
+      },
     },
     {
       title: "所属企业",
@@ -78,6 +83,10 @@ const handleEdit = () => {
 };
 const handleDel = () => {
   console.log("del :>> ", "del");
+};
+// 表格内按钮
+const handleReset = (row) => {
+  console.log("resetFn :>> ", row);
 };
 // 选中项发生改变
 const handleSelectionChange = debounce((val) => {
@@ -93,8 +102,9 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
+@import "@/styles/mixin.scss";
+@import "@/styles/variables.scss";
 .table {
-  width: 1000px;
-  height: 500px;
+  margin: 100px auto;
 }
 </style>

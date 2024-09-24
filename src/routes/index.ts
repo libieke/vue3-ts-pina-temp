@@ -6,7 +6,7 @@ let routes = [
     path: '/',
     name: 'home',
     //使用import可以路由懒加载，如果不使用，太多组件一起加载会造成白屏
-    component: () => import('../view/homeView.vue')
+    component: () => import('@/view/layout/index.vue')
   },
   //{
   //配置404页面

@@ -13,13 +13,9 @@ declare module 'vue' {
     ElPagination: typeof import('element-plus/es')['ElPagination']
     ElTable: typeof import('element-plus/es')['ElTable']
     ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
-    Hamburger: typeof import('./src/components/Hamburger/index.vue')['default']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
-    MapContainer: typeof import('./src/components/MapContainer/MapContainer.vue')['default']
     Pagination: typeof import('./src/components/Pagination/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SvgIcon: typeof import('./src/components/SvgIcon/index.vue')['default']
   }
   export interface ComponentCustomProperties {
     vLoading: typeof import('element-plus/es')['ElLoadingDirective']

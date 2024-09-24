@@ -12,6 +12,7 @@ import http from '@/utils/request.ts'
 
 const app = createApp(App)
 
+
 app.use(http)
 app.use(ElementPlus)
 app.use(router)
