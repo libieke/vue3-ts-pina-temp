@@ -28,6 +28,7 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "Element-puls.d.ts"
+    "Element-puls.d.ts",
+    "auto-import.d.ts"
   ]
 }

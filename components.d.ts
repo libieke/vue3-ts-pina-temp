@@ -9,6 +9,10 @@ declare module 'vue' {
   export interface GlobalComponents {
     ContentTitle: typeof import('./src/components/ContentTitle/index.vue')['default']
     CustomTable: typeof import('./src/components/CustomTable/index.vue')['default']
+    ElButton: typeof import('element-plus/es')['ElButton']
+    ElPagination: typeof import('element-plus/es')['ElPagination']
+    ElTable: typeof import('element-plus/es')['ElTable']
+    ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     Hamburger: typeof import('./src/components/Hamburger/index.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     MapContainer: typeof import('./src/components/MapContainer/MapContainer.vue')['default']
@@ -16,5 +20,8 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SvgIcon: typeof import('./src/components/SvgIcon/index.vue')['default']
+  }
+  export interface ComponentCustomProperties {
+    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
   }
 }
