@@ -7,6 +7,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    404: typeof import('./src/components/404/index.vue')['default']
     ContentTitle: typeof import('./src/components/ContentTitle/index.vue')['default']
     CustomTable: typeof import('./src/components/CustomTable/index.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']

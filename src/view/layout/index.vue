@@ -8,8 +8,7 @@
         <el-aside width="200px">
           <sideBar></sideBar>
         </el-aside>
-        <el-main
-          >内容
+        <el-main>
           <svg-icon width="40px" height="40px" fill="red" name="phone"></svg-icon>
         </el-main>
       </el-container>

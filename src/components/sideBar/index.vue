@@ -1,8 +1,8 @@
 <template>
-  <el-radio-group v-model="isCollapse" class="change-ridio">
-    <el-radio-button :value="false"></el-radio-button>
-    <el-radio-button :value="true"> </el-radio-button>
-  </el-radio-group>
+  <!-- <el-radio-group v-model="isCollapse" class="change-ridio">
+    <el-radio-button :value="true"></el-radio-button>
+    <el-radio-button :value="false"> </el-radio-button>
+  </el-radio-group> -->
   <el-menu
     default-active="2"
     class="el-menu-vertical-demo"
@@ -32,7 +32,7 @@
 </template>
 
 <script lang="ts" setup>
-const isCollapse = ref(true);
+const isCollapse = ref(false);
 const handleOpen = (key: string, keyPath: string[]) => {
   console.log(key, keyPath);
 };
