@@ -1,11 +1,11 @@
 import { createApp } from 'vue'
-import "@/styles/index.scss";
-import "normalize.css/normalize.css";
+import './style.scss';
+import 'element-plus/dist/index.css'
+import 'virtual:svg-icons-register'
 import router from "@/routes/index";
 import App from './App.vue'
 import { createPinia } from 'pinia'
 const pinia = createPinia()
-import 'element-plus/dist/index.css'
 import ElementPlus from 'element-plus'
 import http from '@/utils/request.ts'
 
