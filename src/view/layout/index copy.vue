@@ -1,17 +1,15 @@
-<!-- 布局1 -->
 <template>
+  <!-- 布局2 -->
   <div class="common-layout">
     <el-container>
-      <el-header style="padding: 0">
-        <headBar></headBar>
-      </el-header>
+      <el-aside width="200px">
+        <sideBar />
+      </el-aside>
       <el-container>
-        <el-aside width="200px">
-          <sideBar></sideBar>
-        </el-aside>
-        <el-main>
-          <router-view />
-        </el-main>
+        <el-header>
+          <headbar />
+        </el-header>
+        <el-main>Main</el-main>
       </el-container>
     </el-container>
   </div>

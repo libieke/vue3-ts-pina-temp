@@ -1,57 +1,45 @@
 <template>
-  <!-- <el-radio-group v-model="isCollapse" class="change-ridio">
-    <el-radio-button :value="true"></el-radio-button>
-    <el-radio-button :value="false"> </el-radio-button>
-  </el-radio-group> -->
-  <el-menu
-    default-active="2"
-    class="el-menu-vertical-demo"
-    :collapse="isCollapse"
-    @open="handleOpen"
-    @close="handleClose"
-  >
-    <el-sub-menu index="1">
-      <template #title>
-        <el-icon><location /></el-icon>
-        <span>Navigator One</span>
-      </template>
-      <el-menu-item-group>
-        <template #title><span>Group One</span></template>
-        <el-menu-item index="1-1">item one</el-menu-item>
-        <el-menu-item index="1-2">item two</el-menu-item>
-      </el-menu-item-group>
-      <el-menu-item-group title="Group Two">
-        <el-menu-item index="1-3">item three</el-menu-item>
-      </el-menu-item-group>
-      <el-sub-menu index="1-4">
-        <template #title><span>item four</span></template>
-        <el-menu-item index="1-4-1">item one</el-menu-item>
-      </el-sub-menu>
-    </el-sub-menu>
-  </el-menu>
+  <div class="sidebar">
+    <!-- 布局2使用 -->
+    <!-- <div class="sidebar-logo flex-center">
+      <svg-icon icon-class="logo" />
+      <span>VitalityAdmin</span>
+    </div> -->
+    <el-menu
+      active-text-color="#fff"
+      background-color="#001529"
+      :default-active="$route.path"
+      text-color="#999"
+      :unique-opened="true"
+      router
+    >
+      <SidebarItem :routerList="routerList" />
+    </el-menu>
+  </div>
 </template>
 
 <script lang="ts" setup>
-const isCollapse = ref(false);
-const handleOpen = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath);
-};
-const handleClose = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath);
-};
+const router = useRouter().getRoutes();
+const routerList = router.filter((v) => v.meta && v.meta.isShow);
 </script>
 
-<style>
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 200px;
-  min-height: 400px;
-}
-.por {
-  position: relative;
-}
-.change-ridio {
-  position: absolute;
-  top: 70px;
-  left: 210px;
+<style lang="scss" scoped>
+.sidebar {
+  height: 100%;
+  // background-color: #799197;
+  border-right: none;
+  /* .sidebar-logo {
+    height: 48px;
+    background-color: #002140;
+    color: #fff;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: center;
+    font-size: 20px;
+  } */
+
+  .el-menu {
+    height: calc(100% - 60px);
+  }
 }
 </style>
