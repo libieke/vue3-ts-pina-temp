@@ -159,7 +159,7 @@ defineExpose({ handleEcho, clearSelection });
     color: #fff;
   }
 }
-::v-deep .el-table__header-wrapper {
+::v-deep(.el-table__header-wrapper) {
   .has-gutter {
     color: #1d2129;
     th {
@@ -171,44 +171,44 @@ defineExpose({ handleEcho, clearSelection });
   }
 }
 
-::v-deep .el-table__body {
+::v-deep(.el-table__body) {
   width: 100% !important;
 }
-::v-deep .el-table__footer {
+::v-deep(.el-table__footer) {
   width: 100% !important;
 }
-::v-deep .el-table__header {
+::v-deep(.el-table__header) {
   width: 100% !important;
   border-bottom: 1px solid #031a3c;
 }
 
-::v-deep .el-table__empty-block {
+::v-deep(.el-table__empty-block) {
   width: 100% !important;
 }
 
-::v-deep .cell.el-tooltip {
+::v-deep(.cell.el-tooltip) {
   width: 100% !important;
 }
 
 // 显示的颜色
-::v-deep .el-table__body tr.el-table__row--striped td {
+::v-deep(.el-table__body tr.el-table__row--striped td) {
   background-color: #043272 !important;
 }
-::v-deep .el-table__row {
+::v-deep(.el-table__row) {
   background: #031a3c !important;
 }
 
-::v-deep .el-table__body tr:hover > td {
+::v-deep(.el-table__body tr:hover > td) {
   background-color: #3d5e8d !important;
 }
 
-::v-deep .el-table--border,
+::v-deep(.el-table--border),
 .el-table--group {
   border: 1px solid #003b7a;
 }
 
 // 隐藏滚动条
-::v-deep .el-table__body-wrapper {
+::v-deep(.el-table__body-wrapper) {
   &::-webkit-scrollbar {
     // 整个滚动条
     width: 0 !important; // 纵向滚动条的宽度

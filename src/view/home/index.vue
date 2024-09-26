@@ -102,8 +102,8 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-@import "@/styles/mixin.scss";
-@import "@/styles/variables.scss";
+// @import "@/styles/mixin.scss";
+// @import "@/styles/variables.scss";
 .table {
   margin: 100px auto;
 }
