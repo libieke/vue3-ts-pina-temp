@@ -5,6 +5,8 @@
     :style="{ width: '100%', ...cellStyle }"
     :header-cell-style="headerCellStyle"
     :cell-style="cellStyle"
+    :row-style="{ height: '32px', padding: '0' }"
+    border
     :max-height="tableHeight"
     @selection-change="handleSelectionChange"
     @select="handleSelectChange"
@@ -52,6 +54,8 @@
   </el-table>
 </template>
 <script setup>
+import { color } from "echarts";
+
 //暂无数据列表
 let props = defineProps({
   // 表格数据以及表头数据
@@ -75,14 +79,14 @@ let props = defineProps({
   headerCellStyle: {
     type: Object,
     default: () => {
-      return { color: "#232932", background: "#f5f5f5" };
+      return { color: "#232932", background: "#fff", height: "40px" };
     },
   },
   // 表格样式
   cellStyle: {
     type: Object,
     default: () => {
-      return { color: "#646a73", background: "#f5f5f5" };
+      return { color: "#646a73", background: "#fff" };
     },
   },
   // 是否显示选择栏
@@ -141,16 +145,12 @@ defineExpose({ handleEcho, clearSelection });
 </script>
 
 <style lang="scss" scoped>
-.test-div {
-  animation: fadeOut 500ms linear;
-}
-
 .inner-btn {
   width: 80px;
-  height: 36px;
+  height: 30px;
   cursor: pointer;
   text-align: center;
-  line-height: 36px;
+  line-height: 30px;
   color: #00d8f4;
   border-radius: 4px 4px 4px 4px;
   border: 1px solid #00d8f4;
@@ -159,52 +159,24 @@ defineExpose({ handleEcho, clearSelection });
     color: #fff;
   }
 }
-::v-deep(.el-table__header-wrapper) {
-  .has-gutter {
-    color: #1d2129;
-    th {
-      background: #003b7a;
-    }
-    tr {
-      background: #003b7a;
-    }
-  }
-}
+// ::v-deep(.el-table__header-wrapper) {
+//   .has-gutter {
+//     color: #1d2129;
+//     th {
+//       background: #003b7a;
+//     }
+//     tr {
+//       background: #003b7a;
+//     }
+//   }
+// }
 
-::v-deep(.el-table__body) {
-  width: 100% !important;
-}
-::v-deep(.el-table__footer) {
-  width: 100% !important;
-}
-::v-deep(.el-table__header) {
-  width: 100% !important;
-  border-bottom: 1px solid #031a3c;
-}
-
-::v-deep(.el-table__empty-block) {
-  width: 100% !important;
-}
-
-::v-deep(.cell.el-tooltip) {
-  width: 100% !important;
-}
-
-// 显示的颜色
-::v-deep(.el-table__body tr.el-table__row--striped td) {
-  background-color: #043272 !important;
-}
-::v-deep(.el-table__row) {
-  background: #031a3c !important;
+::v-deep(.el-table__cell) {
+  padding: 4px 0 !important;
 }
 
 ::v-deep(.el-table__body tr:hover > td) {
-  background-color: #3d5e8d !important;
-}
-
-::v-deep(.el-table--border),
-.el-table--group {
-  border: 1px solid #003b7a;
+  background-color: #e5e5e5 !important;
 }
 
 // 隐藏滚动条

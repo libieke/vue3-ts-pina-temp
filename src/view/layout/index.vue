@@ -10,6 +10,7 @@
           <sideBar></sideBar>
         </el-aside>
         <el-main>
+          <Breadcrumb></Breadcrumb>
           <router-view />
         </el-main>
       </el-container>
@@ -22,5 +23,8 @@
 .common-layout {
   width: 100%;
   height: 100%;
+}
+.el-main {
+  padding: 0;
 }
 </style>

@@ -7,9 +7,9 @@
     </div> -->
     <el-menu
       active-text-color="#fff"
-      background-color="#001529"
+      background-color="#1f69a7"
       :default-active="$route.path"
-      text-color="#999"
+      text-color="#fff"
       :unique-opened="true"
       router
     >
@@ -26,7 +26,7 @@ const routerList = router.filter((v) => v.meta && v.meta.isShow);
 <style lang="scss" scoped>
 .sidebar {
   height: 100%;
-  // background-color: #799197;
+  // background-color: #1f69a7;
   border-right: none;
   /* .sidebar-logo {
     height: 48px;
@@ -39,7 +39,7 @@ const routerList = router.filter((v) => v.meta && v.meta.isShow);
   } */
 
   .el-menu {
-    height: calc(100% - 60px);
+    height: calc(100% - 50px);
   }
 }
 </style>

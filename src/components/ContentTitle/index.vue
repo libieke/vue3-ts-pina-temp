@@ -1,6 +1,6 @@
 <template>
   <div class="padding-left-20 padding-right-20">
-    <h2 class="font-14">{{ title }}</h2>
+    <!-- <h2 class="font-14">{{ title }}</h2> -->
     <div class="bg-white"><slot /></div>
   </div>
 </template>
@@ -28,7 +28,6 @@ const props = defineProps({
   font-size: 14px;
 }
 .bg-white {
-  padding: 0 20px;
   min-height: calc(100vh - 90px);
 }
 </style>

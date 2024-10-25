@@ -36,14 +36,14 @@ export default defineConfig({
   build: {
     outDir: 'me-test',
     assetsDir: 'static',
-    target: ['es2015']
+    target: ['esxss']
   },
   server: {
     proxy: {
       '/api': {
-        target: 'https://xxx.cn',
+        target: "http://192.168.1.104:8999/",
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '/api')
+        rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
   },
@@ -51,6 +51,6 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, './src')
     },
-    extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json", ".vue"]
+    extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json", ".vue", 'png']
   }
 })

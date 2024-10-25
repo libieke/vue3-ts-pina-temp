@@ -1,27 +1,25 @@
 <template>
-  <div ref="rightTable" class="table">
-    <ContentTitle title="首页">
-      <div class="agent-container padding-top-20">
-        <CustomTable
-          ref="tableList"
-          :table-data="tableData"
-          :selectShow="false"
-          :table-height="appManageHeight"
-          @resetFn="handleReset"
-          @selection-change="handleSelectionChange"
-        >
-          <template v-slot:actionColumn>
-            <el-table-column label="操作" align="center" width="200">
-              <template v-slot="{ row }">
-                <span class="pointer mlr10" @click="handleEdit(row)">编辑</span>
-                <span class="pointer red mlr10" @click="handleDel(row)">删除</span>
-              </template>
-            </el-table-column>
-          </template>
-        </CustomTable>
-      </div>
-    </ContentTitle>
-  </div>
+  <ContentTitle>
+    <div class="agent-container padding-top-20">
+      <CustomTable
+        ref="tableList"
+        :table-data="tableData"
+        :selectShow="false"
+        :table-height="appManageHeight"
+        @resetFn="handleReset"
+        @selection-change="handleSelectionChange"
+      >
+        <template v-slot:actionColumn>
+          <el-table-column label="操作" align="center" width="200">
+            <template v-slot="{ row }">
+              <span class="pointer mlr10" @click="handleEdit(row)">编辑</span>
+              <span class="pointer red mlr10" @click="handleDel(row)">删除</span>
+            </template>
+          </el-table-column>
+        </template>
+      </CustomTable>
+    </div>
+  </ContentTitle>
 </template>
 
 <script setup>

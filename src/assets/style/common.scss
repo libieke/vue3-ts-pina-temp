@@ -13,57 +13,69 @@
   align-items: center;
 }
 
-.white{
+.padding-r-10 {
+  padding-right: 10px;
+}
+
+.padding-r-15 {
+  padding-right: 15px;
+}
+
+.padding-r-20 {
+  padding-right: 20px;
+}
+
+.white {
   color: #fff !important;
 }
 
-.orange{
+.orange {
   color: #F7711B !important;
 }
 
-.blue{
+.blue {
   color: #155EE8 !important;
 }
 
-.red{
+.red {
   color: #FF0303;
 }
 
-.violet{
+.violet {
   color: #7052F8 !important;
 }
 
-.gray6{
+.gray6 {
   color: #666 !important;
 }
 
-.gray9{
+.gray9 {
   color: #999 !important;
 }
 
-.yellow{
+.yellow {
   color: #FCDE3F !important;
 }
 
-.green{
+.green {
   color: #07A533 !important;
 }
 
-.bold{
+.bold {
   font-weight: bold;
 }
 
-.normal{
+.normal {
   font-weight: normal;
 }
 
-.nowrap{
+.nowrap {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.text-line2{
+.text-line2 {
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -72,7 +84,7 @@
   -webkit-box-orient: vertical;
 }
 
-.text-line3{
+.text-line3 {
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -81,23 +93,25 @@
   -webkit-box-orient: vertical;
 }
 
-.main-content{
+.main-content {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.min-content{
+.min-content {
   min-width: 1280px;
 }
 
-.h-100p{
+.h-100p {
   height: 100%;
 }
-.w-100p{
-  width: 100%!important;
+
+.w-100p {
+  width: 100% !important;
 }
-.pointer{
+
+.pointer {
   cursor: pointer;
 }
 
@@ -105,18 +119,22 @@
   display: none !important;
 }
 
-.text-center{
+.text-center {
   text-align: center;
 }
-.text-left{
+
+.text-left {
   text-align: left;
 }
-.text-right{
+
+.text-right {
   text-align: right;
 }
-.relative{
-  position: relative!important;
+
+.relative {
+  position: relative !important;
 }
+
 @for $i from 10 through 40 {
   .font-#{$i} {
     font-size: $i + px !important;
@@ -124,19 +142,28 @@
 }
 
 @for $i from 0 through 80 {
+
   // 只要双数和能被5除尽的数
-  @if $i % 2 == 0 or $i % 5 == 0 {
+  @if $i % 2==0 or $i % 5==0 {
+
     // 得出：margin-30或者u-m-30
-    .margin-#{$i}, .m-#{$i} {
+    .margin-#{$i},
+    .m-#{$i} {
       margin: $i + px !important;
     }
 
     // 得出：padding-30或者p-30
-    .padding-#{$i}, .p-#{$i} {
+    .padding-#{$i},
+    .p-#{$i} {
       padding: $i + px !important;
     }
 
-    @each $short, $long in l left, t top, r right, b bottom {
+    @each $short,
+    $long in l left,
+    t top,
+    r right,
+    b bottom {
+
       // 缩写版，结果如： m-l-30
       // 定义外边距
       .m-#{$short}-#{$i} {

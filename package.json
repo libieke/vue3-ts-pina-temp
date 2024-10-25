@@ -16,6 +16,7 @@
     "echarts": "^5.5.1",
     "element-plus": "^2.8.3",
     "fast-glob": "^3.3.2",
+    "js-cookie": "^3.0.5",
     "normalize.css": "^8.0.1",
     "pinia": "^2.2.2",
     "postcss-nesting": "^13.0.0",
@@ -23,6 +24,7 @@
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^22.6.1",
     "@vitejs/plugin-vue": "^5.1.2",
     "sass": "^1.78.0",
