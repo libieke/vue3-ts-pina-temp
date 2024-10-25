@@ -24,7 +24,7 @@ router.beforeEach(async (to: any, from: any, next: any) => {
     // 获取用户名字
     let username = useStore.username
     // 用户登录判断
-    if (token) {
+    // if (token) {
         // 登录成功，不能访问login，指向home
         if (to.path == '/login') {
             next({ path: '/' })
@@ -50,14 +50,14 @@ router.beforeEach(async (to: any, from: any, next: any) => {
                 }
             }
         }
-    } else {
-        // 用户未登录判断
-        if (to.path == '/login') {
-            next()
-        } else {
-            next({ path: '/login', query: { redirect: to.path } })
-        }
-    }
+    // } else {
+    //     // 用户未登录判断
+    //     if (to.path == '/login') {
+    //         next()
+    //     } else {
+    //         next({ path: '/login', query: { redirect: to.path } })
+    //     }
+    // }
 })
 // 全局后置守卫
 router.afterEach((to: any, from: any) => {

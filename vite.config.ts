@@ -39,6 +39,7 @@ export default defineConfig({
     target: ['esxss']
   },
   server: {
+    port: 5173,
     proxy: {
       '/api': {
         target: "http://192.168.1.104:8999/",

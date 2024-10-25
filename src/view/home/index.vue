@@ -9,13 +9,13 @@
 <script setup>
 import { FlashSessionListApi } from "@/api/api.ts";
 
-const list =  () => {
-  FlashSessionListApi().then((result) => {
-    console.log('result :>> ', result);
-  }).catch((err) => {
-    
-  });
-};
+onMounted(() => {
+  FlashSessionListApi()
+    .then((result) => {
+      console.log("result :>> ", result);
+    })
+    .catch((err) => {});
+});
 </script>
 
 <style lang="scss" scoped>

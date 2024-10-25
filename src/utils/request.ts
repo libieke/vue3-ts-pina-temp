@@ -9,7 +9,6 @@ const service: AxiosInstance = axios.create({
 // request interceptor
 service.interceptors.request.use(
   (config: any) => {
-    debugger
     // let token: string = ''//此处换成自己获取回来的token，通常存在在cookie或者store里面
     // if (token) {
     //   // 让每个请求携带token-- ['X-Token']为自定义key 请根据实际情况自行修改
